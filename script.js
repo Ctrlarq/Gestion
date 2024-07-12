@@ -1,17 +1,23 @@
-
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll("#sidebar .nav-link").forEach(function(navLink) {
-        navLink.addEventListener("click", function() {
-            document.querySelectorAll("#sidebar .nav-link").forEach(function(navLink) {
-                navLink.classList.remove("active");
-            });
-            this.classList.add("active");
-            loadSection(this.textContent.trim());
-        });
+    const sidebar = document.querySelector(".sidebar");
+    const closeBtn = document.querySelector("#btn");
+    const searchBtn = document.querySelector(".bx-search");
+
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();
     });
 
-    function loadSection(section) {
-        const content = document.getElementById("content");
-        content.innerHTML = `<h2>${section}</h2><p>Contenido de ${section}</p>`;
+    searchBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();
+    });
+
+    function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
     }
 });
