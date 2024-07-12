@@ -1,23 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
     const sidebar = document.querySelector(".sidebar");
-    const closeBtn = document.querySelector("#btn");
-    const searchBtn = document.querySelector(".bx-search");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll(".section");
 
-    closeBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        menuBtnChange();
+    navLinks.forEach(link => {
+        link.addEventListener("click", function() {
+            const sectionId = this.getAttribute("data-section");
+
+            navLinks.forEach(link => link.classList.remove("active"));
+            this.classList.add("active");
+
+            sections.forEach(section => {
+                section.classList.remove("active");
+                if (section.id === sectionId) {
+                    section.classList.add("active");
+                }
+            });
+        });
     });
 
-    searchBtn.addEventListener("click", () => {
+    document.querySelector(".sidebar-button").addEventListener("click", function() {
         sidebar.classList.toggle("open");
-        menuBtnChange();
     });
-
-    function menuBtnChange() {
-        if (sidebar.classList.contains("open")) {
-            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-        } else {
-            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-        }
-    }
 });
