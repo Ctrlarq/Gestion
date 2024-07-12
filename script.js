@@ -23,3 +23,13 @@ document.addEventListener("DOMContentLoaded", function() {
         sidebar.classList.toggle("open");
     });
 });
+
+function createClient() {
+    // Aquí puedes agregar la lógica para crear un nuevo cliente
+    alert("Funcionalidad para crear un nuevo cliente");
+}
+
+function importExcel() {
+    // Aquí puedes agregar la lógica para importar un archivo de Excel
+    alert("Funcionalidad para importar un archivo de Excel");
+}

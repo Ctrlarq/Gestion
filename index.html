@@ -114,11 +114,17 @@
             </div>
             <div class="section" id="clients">
                 <h2>Clientes</h2>
-                <div>Visualización de clientes y la posibilidad de crear o registrar un nuevo cliente.</div>
+                <div>
+                    <button onclick="createClient()">Registrar nuevo cliente</button>
+                    <div id="client-list">Listado de clientes</div>
+                </div>
             </div>
             <div class="section" id="insumos">
                 <h2>Gestión de Insumos/Mater.</h2>
-                <div>Ver, modificar precios, y actualizar insumos, materiales y mano de obra.</div>
+                <div>
+                    <button onclick="importExcel()">Importar Lista de Insumos</button>
+                    <div id="insumos-list">Listado de insumos</div>
+                </div>
             </div>
             <div class="section" id="rubros">
                 <h2>Gestión de Rubros y Partidas</h2>
