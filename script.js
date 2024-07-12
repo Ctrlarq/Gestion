@@ -25,11 +25,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function createClient() {
-    // Aquí puedes agregar la lógica para crear un nuevo cliente
     alert("Funcionalidad para crear un nuevo cliente");
 }
 
 function importExcel() {
-    // Aquí puedes agregar la lógica para importar un archivo de Excel
     alert("Funcionalidad para importar un archivo de Excel");
 }
+
+function createProject() {
+    alert("Funcionalidad para crear una nueva obra en ejecución");
+}
+
